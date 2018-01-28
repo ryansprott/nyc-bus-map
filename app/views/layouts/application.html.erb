@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="busMap">
   <head>
-    <title>NycBusMap</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTA Bus Map</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/nmccready/angular-simple-logger/master/dist/angular-simple-logger.js"></script>
+   </head>
 
   <body>
     <%= yield %>
+    <script type="text/javascript" src="https://cdn.rawgit.com/angular-ui/angular-google-maps/master/dist/angular-google-maps.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,25 @@
+<div class="tab-pane cont" id="buses" class="bus-table">
+    <h4 ng-show="vm.busData.MonitoredStopVisit">
+        Click a row to recenter the map on a bus.
+    </h4>
+    <table ng-show="vm.busData.MonitoredStopVisit" class="table table-condensed table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Route</th>
+                <th>Destination</th>
+                <th>Expected Arrival Time</th>
+                <th>Distance</th>
+                <th>Stops Away</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="bus in vm.busData.MonitoredStopVisit" ng-click="vm.recenterOnBus(bus)">
+                <td>{{bus.MonitoredVehicleJourney.PublishedLineName}}</td>
+                <td>{{bus.MonitoredVehicleJourney.DestinationName}}</td>
+                <td>{{bus.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime | date: 'mediumTime'}}</td>
+                <td>{{bus.MonitoredVehicleJourney.MonitoredCall.Extensions.Distances.PresentableDistance}}</td>
+                <td>{{bus.MonitoredVehicleJourney.MonitoredCall.Extensions.Distances.StopsFromCall}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

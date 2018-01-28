@@ -1,24 +1,5 @@
-# README
+# nyc-bus-map 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Displays real-time information on NYC buses, routes, and stops. Simple Rails backend with Angular frontend.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Requires a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key) and an [MTA Bus Time API key](http://bustime.mta.info/wiki/Developers/Index) See `config/secrets.yml.example`.

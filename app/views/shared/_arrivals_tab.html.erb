@@ -1,0 +1,16 @@
+<div class="tab-pane cont" id="arrival-times" class="bus-table">
+    <table ng-hide="vm.arrivals.length == 0" class="table table-bordered table-condensed table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Route</th>
+                <th>Arrival Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="arrival in vm.arrivals">
+                <td>{{arrival.route}}</td>
+                <td>{{arrival.time | date: 'hh:mm:ss a'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
