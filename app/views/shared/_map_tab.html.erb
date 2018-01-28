@@ -1,0 +1,10 @@
+<div class="tab-pane active cont" id="home">                
+    <h4 ng-show="vm.retrievedAt">
+        Click a grey circle for bus info. Click a colored circle to switch stops.
+    </h4>
+    <div ng-controller="MapController as mc">
+        <ui-gmap-google-map center='mc.map.center' zoom='mc.map.zoom'>
+            <ui-gmap-window show="false"></ui-gmap-window>
+        </ui-gmap-google-map>                
+    </div>                
+</div>

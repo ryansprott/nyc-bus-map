@@ -1,0 +1,15 @@
+<div class="tab-pane cont" id="routes" class="bus-table">
+    <table class="table table-condensed" ng-hide="vm.routes.length == 0">
+        <tr ng-repeat="route in vm.routes">
+            <td style="background-color: #{{route.color}}; color: #{{route.textColor}}; font-size: 1.2em;">
+                {{route.shortName}}
+            </td>
+            <td style="background-color: #{{route.color}}; color: #{{route.textColor}}; font-size: 1.2em;">
+                {{route.longName}}
+            </td>
+            <td style="background-color: #{{route.color}}; color: #{{route.textColor}}; font-size: 1.2em;">
+                {{route.via}}
+            </td>
+        </tr>
+    </table>
+</div>

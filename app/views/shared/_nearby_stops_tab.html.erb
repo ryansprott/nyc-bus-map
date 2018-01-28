@@ -1,0 +1,25 @@
+<div class="tab-pane cont" id="nearby-stops" class="bus-table">
+    <h4 ng-hide="vm.stops.length == 0">
+        Click a row to switch stops.
+    </h4>
+    <table ng-hide="vm.stops.length == 0"
+            id="nearbyStops"
+            class="table table-bordered table-condensed table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Stop Code</th>
+                <th>Location</th>
+                <th>Routes Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="stop in vm.stops track by $index" ng-click="vm.switchStop(stop.code)">
+                <td>{{stop.code}}</td>
+                <td>{{stop.name}} - {{stop.direction}}</td>
+                <td>
+                    <span ng-repeat="route in stop.routes">{{route.shortName}}&nbsp;</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
