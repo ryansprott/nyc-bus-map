@@ -1,0 +1,55 @@
+<div ng-controller="MainController as vm">
+    <div class="row form-group">
+        <form name="search">
+            <div class="col-sm-10">
+                <input type="search"
+                       maxlength="6"
+                       style="width: 100%;"
+                       class="form-control"
+                       ng-model="vm.stopId"
+                       placeholder="Enter a six-digit stop ID (ex. 401808)" />
+            </div>
+            <div class="col-sm-2">
+                <input type="submit"
+                       class="form-control"
+                       ng-click="vm.doSearch()" />
+            </div>
+        </form>
+    </div>
+
+    <h1 ng-show="vm.stopInfo">
+        {{ vm.stopInfo.name }} - {{vm.stopInfo.direction }}
+    </h1>
+
+    <h4 ng-show="vm.retrievedAt">
+        Data retrieved at {{vm.retrievedAt}}. Click "Submit" to refresh.
+    </h4>
+
+    <div class="tab-container">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a id="map-tab" href="#home" data-toggle="tab">Map</a>
+            </li>
+            <li>
+                <a href="#routes" data-toggle="tab">Routes Serving this Stop</a>
+            </li>
+            <li>
+                <a href="#buses" data-toggle="tab">Inbound Buses</a>
+            </li>
+            <li>
+                <a href="#arrival-times" data-toggle="tab">Scheduled Arrivals</a>
+            </li>
+            <li>
+                <a href="#nearby-stops" data-toggle="tab">Nearby Stops</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <%= render 'shared/map_tab' %>
+            <%= render 'shared/routes_tab' %>
+            <%= render 'shared/buses_tab' %>
+            <%= render 'shared/arrivals_tab' %>
+            <%= render 'shared/nearby_stops_tab' %>
+        </div>
+    </div>
+</div>
