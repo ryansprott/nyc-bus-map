@@ -1,0 +1,11 @@
+(function () {
+  'use strict';
+  angular.module('busMap', ['uiGmapgoogle-maps']);
+  angular.module('busMap').config(function (uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+      key: '<%= Rails.application.secrets.gmaps_api_key %>',
+      v: '3.30',
+      libraries: 'geometry'
+    });
+  });
+})();
