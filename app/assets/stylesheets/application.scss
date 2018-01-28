@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body { padding: 20px; }
+.angular-google-map-container { height: 600px }
+.gm-style-iw { min-width: 300px }
+.bus-table { height: 600px; max-height: 600px; overflow-y: scroll; }
